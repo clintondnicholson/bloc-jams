@@ -14,22 +14,21 @@ var pointsArray = document.getElementsByClassName('point');
 
 var animatePoints = function(points) {
   var revealPoints = function(foo) {
-     points[foo].style.opacity = 1;
-     points[foo].style.transform = "scaleX(1) translateY(0)";
-     points[foo].style.msTransform = "scaleX(1) translateY(0)";
-     points[foo].style.WebkitTransform = "scaleX(1) translateY(0)";
+     foo.style.opacity = 1;
+     foo.style.transform = "scaleX(1) translateY(0)";
+     foo.style.msTransform = "scaleX(1) translateY(0)";
+     foo.style.WebkitTransform = "scaleX(1) translateY(0)";
    };
+forEach(points,revealPoints);
 
-for (v=0; v < points.length; v++) {
-   revealPoints(v);
-   };
+ 
 };
 
 window.onload = function() {
   if (window.innerHeight > 950) {
            animatePoints(pointsArray);
        }
-       
+
   var sellingPoints = document.getElementsByClassName('selling-points')[0];
   var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200;
   window.addEventListener('scroll', function(event) {
