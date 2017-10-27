@@ -3,3 +3,14 @@ function forEach(arr, func) {
     func(arr[i]);
   };
 }
+
+var albumImage = document.getElementById('album-cover-art');
+var albums = [albumPicasso, albumMarconi, chanceTheRapper];
+var albumShowing = 1;
+albumImage.addEventListener("click",function(event) {
+  setCurrentAlbum(albums[albumShowing]);
+  albumShowing++;
+  if (albumShowing == albums.length) {
+    albumShowing = 0;
+    }
+  });
